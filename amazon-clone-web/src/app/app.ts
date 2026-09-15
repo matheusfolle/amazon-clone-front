@@ -1,11 +1,26 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-root',
-  styleUrl: './app.scss',
+  standalone: true,
   templateUrl: './app.html',
+  styleUrls: ['./app.scss']
 })
-export class App {
-  protected readonly title = signal('amazon-clone-web');
+export class AppComponent implements OnInit {
+  // guarda os produtos que chegarem da API
+  products: any[] = [];
+
+  ngOnInit() {
+    this.carregarProdutos();
+  }
+
+  // Faz a chamada nativa e limpa para o Spring Boot
+  async carregarProdutos() {
+    try {
+      const response = await fetch('http://localhost:8080/api/products');
+      this.products = await response.json();
+    } catch (error) {
+      console.error('Erro de conexão com o middleware:', error);
+    }
+  }
 }
