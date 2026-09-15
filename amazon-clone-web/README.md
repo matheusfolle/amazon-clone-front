@@ -1,59 +1,29 @@
-# AmazonCloneWeb
+# SAP Ecosystem Mock Web (Spartacus Storefront Simulation)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.6.
+## 📌 Sobre o Projeto
+Esta aplicação front-end foi desenvolvida para atuar como a camada de apresentação (Storefront) de um ecossistema de e-commerce corporativo, simulando o papel do SAP Spartacus em uma arquitetura Headless. 
 
-## Development server
+O sistema é totalmente desacoplado e consome os dados e regras de negócio provenientes da API RESTful desenvolvida em Spring Boot, demonstrando a separação de responsabilidades exigida em integrações complexas.
 
-To start a local development server, run:
+## 🎨 UI/UX e Decisões de Design
+Em vez de focar em elementos visuais de varejo genérico, a interface foi construída seguindo diretrizes de **design institucional e estrutural**. A tipografia de alto contraste e a ausência de ruídos visuais transmitem solidez e facilitam a escaneabilidade dos dados integrados com o ERP (S/4HANA).
 
-```bash
-ng serve
-```
+## 🛠️ Stack Tecnológica
+* **Angular 17+:** Framework principal operando com a moderna arquitetura de *Standalone Components* (sem necessidade de NgModules).
+* **SCSS (Sass):** Estilização modular e escalável.
+* **Fetch API nativa:** Integração assíncrona com o middleware (Spring Boot) para consumo do catálogo de produtos.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚀 Como Executar
 
 ```bash
-ng generate --help
-```
+# Clone o repositório
+git clone [https://github.com/matheusfolle/amazon-clone-web.git](https://github.com/matheusfolle/amazon-clone-web.git)
 
-## Building
+# Acesse o diretório do projeto
+cd amazon-clone-web
 
-To build the project run:
+# Instale as dependências
+npm install
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Suba o servidor de desenvolvimento
+ng serve -o
