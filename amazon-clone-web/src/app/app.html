@@ -1,0 +1,36 @@
+<main class="container">
+  <header class="header">
+    <h1>Sistema de Catálogo e Integração</h1>
+    <p>Simulação de arquitetura distribuída: Front-end (Spartacus) consumindo API REST (Spring Boot).</p>
+  </header>
+
+  <section class="data-grid">
+    <h2>Produtos Sincronizados</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOME</th>
+          <th>DESCRIÇÃO</th>
+          <th>PREÇO (R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- O loop do Angular vai gerar as linhas da tabela aqui -->
+        @for (product of products; track product.id) {
+          <tr>
+            <td>{{ product.id }}</td>
+            <td><strong>{{ product.name }}</strong></td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4">Nenhum produto integrado ao sistema.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+</main>
